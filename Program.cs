@@ -10,13 +10,13 @@ using System.IO;
 
 namespace say
 {
-    class Program
-    {
+	class Program
+	{
 		static public SpeechSynthesizer synth = new SpeechSynthesizer();
 		static public string[] voicename = new string[(int)VoiceGender.Neutral + 1];
 
 		static void Main(string[] args)
-        {
+		{
 			synth.SetOutputToDefaultAudioDevice();
 
 
@@ -71,7 +71,7 @@ namespace say
 			}
 
 			if (args.Count() > 0)
-            {
+			{
 				foreach (string arg in args)
 				{
 					if (SelectVoiceFromString(arg))
@@ -93,7 +93,7 @@ namespace say
 
 						synth.SpeakSsml(ssml);
 					}
-                }
+				}
 				else
 				{
 					// read lines from the console and say them until, ostensibly, ctrl-z is pressed
@@ -109,8 +109,8 @@ namespace say
 						synth.Speak(line);
 					}
 				}
-            }
-        }
+			}
+		}
 
 		static public bool SelectVoiceFromString(string s)
 		{
